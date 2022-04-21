@@ -17,7 +17,7 @@ export function ErrorNotice({
   actions
 }: ErrorNoticeProps) {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }} role="alert">
+    <Box role="alert">
       <Typography variant="h1" component="div">
         {title}
       </Typography>
