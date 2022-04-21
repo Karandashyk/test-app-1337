@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@components": ["src/components"],
-      "@routes": ["src/routes"]
+      "@constants": ["src/constants"],
+      "@pages": ["src/pages"]
     }
   }
 }

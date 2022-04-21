@@ -1,15 +1,19 @@
 import React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import { Fallback } from '@routes';
+import CssBaseline from '@mui/material/CssBaseline';
+import { Fallback } from '@pages';
 import { RouterFactory } from '@components';
 
 import './App.css';
 
 function App() {
   return (
-    <ErrorBoundary FallbackComponent={Fallback}>
-      <RouterFactory />
-    </ErrorBoundary>
+    <React.Fragment>
+      <CssBaseline />
+      <ErrorBoundary FallbackComponent={Fallback}>
+        <RouterFactory />
+      </ErrorBoundary>
+    </React.Fragment>
   );
 }
 
