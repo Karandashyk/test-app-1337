@@ -8,15 +8,18 @@ This is a test React application for 1337.
 
 - [React](https://reactjs.org/)
 - [MUI](https://mui.com/) - React UI framework
-- [Vite](https://vitejs.dev/) - Build tool
+- [Vite](https://vitejs.dev/) - Build tool (I like to try out new technologies, so I've chosen to use Vite instead of Webpack for this app).
 
 ## Stories
 
-- Typescript
-- Available public url
-- Sort by name and office
-- Filter by name and office
-- Responsive design and modern CSS
+- Typescript \
+  I always use TypeScript and I think that it is helpful to developers and projects in so many ways.
+- Available public url \
+  I think it is easier to see the app right away without having to run it first. It is also a must for every real project, so I wanted to add a base for the future. CI/CD can be added.
+- Sort by name and office and Filter by name and office \
+  I think the page is not very useful if a user cannot sort or filter, so I've added that functionality.
+- Responsive design and modern CSS \
+  I've used MUI to achieve responsiveness and better UI. It is great component library and in general using component library is a good practice.
 
 ## Available Scripts
 
@@ -50,6 +53,8 @@ Starts a TypeScript compiler with --watch parameter, with the ability to react t
 Runs Eslint check.
 
 ## To Do
+
+There are several things that I would like to add at minimum to this project as I have time:
 
 - Add unit tests with @testing-library
 - Add pagination
