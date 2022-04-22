@@ -7,7 +7,7 @@ axios.defaults.baseURL = BASE_URL;
 export const useAxios = <T>(axiosParams: AxiosRequestConfig) => {
   const [data, setData] = useState<T>();
   const [error, setError] = useState<AxiosError>();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const fetchData = async (params: AxiosRequestConfig) => {
     try {
