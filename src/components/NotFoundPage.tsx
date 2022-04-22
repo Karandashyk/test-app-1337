@@ -4,7 +4,7 @@ import { Button } from '@mui/material';
 import { ErrorNotice } from '@components';
 import { PATH_ROOT } from '@constants';
 
-export function PageNotFound() {
+export function NotFoundPage() {
   return (
     <ErrorNotice
       title="Sorry"

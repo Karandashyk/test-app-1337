@@ -30,7 +30,7 @@ export function EmployeeCard({ employee }: EmployeeCardProps) {
   return (
     <Card
       sx={{
-        padding: 2,
+        p: 2,
         height: '100%',
         display: 'flex',
         flexDirection: 'column'
@@ -56,7 +56,7 @@ export function EmployeeCard({ employee }: EmployeeCardProps) {
       </CardContent>
       <CardActions
         sx={{
-          marginTop: 'auto'
+          mt: 'auto'
         }}
       >
         {employee.linkedIn && (

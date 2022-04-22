@@ -17,7 +17,7 @@ export function EmployeesFilter({
     <FormControl variant="outlined">
       <OutlinedInput
         type="text"
-        fullWidth
+        aria-label="employee-filter-input"
         value={searchQuery}
         placeholder="Filter by name or office"
         onChange={onQueryChange}

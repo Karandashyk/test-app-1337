@@ -1,9 +1,10 @@
 import React from 'react';
-import { IconButton, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-
+import IconButton from '@mui/material/IconButton';
 import { SortField, SortOrder } from '@constants';
+import { SortModel } from '@types';
 
 interface EmployeesSortProps {
   sortModel: SortModel;
@@ -14,35 +15,31 @@ interface EmployeesSortProps {
   onToggleSortOrder: () => void;
 }
 
-interface SortModel {
-  sortField: SortField;
-  sortOrder: SortOrder;
-}
-
 export function EmployeesSort({
   sortModel: { sortField, sortOrder },
   onToggleSortField,
   onToggleSortOrder
 }: EmployeesSortProps) {
   return (
-    <ToggleButtonGroup
-      value={sortField}
-      exclusive
-      onChange={onToggleSortField}
-      aria-label="employee-sort-param"
-    >
-      <ToggleButton value={SortField.NAME} aria-label="name-param">
-        Name
-      </ToggleButton>
-      <ToggleButton value={SortField.OFFICE} aria-label="office-param">
-        Office
-      </ToggleButton>
+    <React.Fragment>
+      <ToggleButtonGroup
+        value={sortField}
+        exclusive
+        onChange={onToggleSortField}
+        aria-label="employee-sort-field"
+      >
+        <ToggleButton value={SortField.NAME} aria-label="name-field">
+          Name
+        </ToggleButton>
+        <ToggleButton value={SortField.OFFICE} aria-label="office-field">
+          Office
+        </ToggleButton>
+      </ToggleButtonGroup>
       <IconButton
         color="default"
-        aria-label="upload picture"
-        component="span"
+        aria-label="employee-sort-order"
         onClick={onToggleSortOrder}
-        sx={{ width: '56px', marginLeft: 1 }}
+        sx={{ width: '56px', ml: 1 }}
       >
         {sortOrder === SortOrder.ASC ? (
           <ArrowDownwardIcon />
@@ -50,6 +47,6 @@ export function EmployeesSort({
           <ArrowUpwardIcon />
         )}
       </IconButton>
-    </ToggleButtonGroup>
+    </React.Fragment>
   );
 }

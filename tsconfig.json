@@ -20,8 +20,5 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "include": [
-    "src", ".eslintrc.json", "vite.config.ts", "env.d.ts"
-  ],
   "extends": "./tsconfig.paths.json",
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Employees, PageNotFound } from '@pages';
-import { Layout } from '@components';
+import { Employees, Layout, NotFoundPage } from '@components';
 
 export function RouterFactory() {
   return (
@@ -10,7 +9,7 @@ export function RouterFactory() {
         <Routes>
           <Route path="/" element={<Employees />} />
           <Route path="/employees" element={<Employees />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
     </Layout>

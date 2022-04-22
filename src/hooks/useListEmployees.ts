@@ -1,18 +1,12 @@
 import { useMemo } from 'react';
 import { AxiosError } from 'axios';
 import { useAxios } from '@hooks';
-import { Employee } from '@types';
-import { SortField, SortOrder } from '@constants';
+import { Employee, SortModel } from '@types';
 
 interface ListEmployeesReturnProps {
   employees: Employee[];
   loadingEmployees: boolean;
   errorLoadingEmployees?: AxiosError;
-}
-
-interface SortModel {
-  sortField: SortField;
-  sortOrder: SortOrder;
 }
 
 const searchQueryPredicate = (employee: Employee, query: string) =>

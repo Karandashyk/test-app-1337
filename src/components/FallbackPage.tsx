@@ -5,7 +5,7 @@ interface FallbackPageProps {
   error: Error;
 }
 
-export function Fallback({ error }: FallbackPageProps) {
+export function FallbackPage({ error }: FallbackPageProps) {
   return (
     <Container>
       <div role="alert">

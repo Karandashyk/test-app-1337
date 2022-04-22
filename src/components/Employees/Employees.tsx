@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, LinearProgress, Stack } from '@mui/material';
+import { Grid, LinearProgress, Stack, Typography } from '@mui/material';
 import { useListEmployees } from '@hooks';
 import {
   EmployeeCard,
@@ -9,23 +9,33 @@ import {
   Header
 } from '@components';
 import { SortField, SortOrder } from '@constants';
+import { SortModel } from '@types';
 
 export function Employees() {
-  const [sortField, setSortField] = useState<SortField>(SortField.NAME);
-  const [sortOrder, setSortOrder] = useState<SortOrder>(SortOrder.ASC);
   const [searchQuery, setSearchQuery] = useState<string>('');
-
+  const [sortModel, setSortModel] = useState<SortModel>({
+    sortField: SortField.NAME,
+    sortOrder: SortOrder.ASC
+  });
   const { employees, loadingEmployees, errorLoadingEmployees } =
-    useListEmployees({ sortModel: { sortField, sortOrder }, searchQuery });
+    useListEmployees({ sortModel, searchQuery });
 
   const handleToggleSortOrder = () => {
-    setSortOrder(sortOrder === SortOrder.ASC ? SortOrder.DESC : SortOrder.ASC);
+    setSortModel({
+      ...sortModel,
+      sortOrder:
+        sortModel.sortOrder === SortOrder.ASC ? SortOrder.DESC : SortOrder.ASC
+    });
   };
 
   const handleToggleSortField = (
     e: React.MouseEvent<HTMLElement, MouseEvent>,
     value: SortField
-  ) => setSortField(value);
+  ) =>
+    setSortModel({
+      ...sortModel,
+      sortField: value
+    });
 
   const handleSearchQueryChange = (
     e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
@@ -37,7 +47,9 @@ export function Employees() {
       {loadingEmployees && (
         <Stack>
           <LinearProgress variant="query" />
-          Loading...
+          <Typography variant="h4" component="div">
+            Loading...
+          </Typography>
         </Stack>
       )}
       {errorLoadingEmployees && (
@@ -51,15 +63,14 @@ export function Employees() {
           <Stack
             spacing={2}
             direction={{ xs: 'column', sm: 'row' }}
-            justifyContent="flex-end"
-            sx={{ marginTop: 2, marginBottom: 2 }}
+            sx={{ mt: 2, mb: 2, justifyContent: 'flex-end' }}
           >
             <EmployeesFilter
               searchQuery={searchQuery}
               onQueryChange={handleSearchQueryChange}
             />
             <EmployeesSort
-              sortModel={{ sortOrder, sortField }}
+              sortModel={sortModel}
               onToggleSortField={handleToggleSortField}
               onToggleSortOrder={handleToggleSortOrder}
             />
