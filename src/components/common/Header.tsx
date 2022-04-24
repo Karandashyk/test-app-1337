@@ -10,8 +10,7 @@ export function Header({ title }: HeaderProps) {
     <Stack
       sx={{
         mb: 2,
-        p: 1,
-        color: 'text.secondary'
+        color: 'text.primary'
       }}
     >
       <Typography sx={{ typography: { sm: 'h4', xs: 'h6' } }}>

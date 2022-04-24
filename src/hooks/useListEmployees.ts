@@ -9,7 +9,7 @@ interface ListEmployeesReturnProps {
   errorLoadingEmployees?: AxiosError;
 }
 
-const searchQueryPredicate = (employee: Employee, query: string) =>
+const searchEmployees = (employee: Employee, query: string) =>
   employee.name.toLowerCase().includes(query.toLowerCase()) ||
   employee.office?.toLowerCase().includes(query.toLowerCase());
 
@@ -42,12 +42,12 @@ export const useListEmployees = ({
     error
   } = useAxios<Employee[]>({
     method: 'GET',
-    url: `/employees`
+    url: '/employees'
   });
 
   const memoizedEmployees = useMemo(() => {
     return [...data]
-      .filter((employee) => searchQueryPredicate(employee, searchQuery))
+      .filter((employee) => searchEmployees(employee, searchQuery))
       .sort((a, b) => sortEmployees(a, b, sortModel));
   }, [data, sortModel, searchQuery]);
 

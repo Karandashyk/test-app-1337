@@ -63,8 +63,19 @@ export function Employees() {
           <Stack
             spacing={2}
             direction={{ xs: 'column', sm: 'row' }}
-            sx={{ mt: 2, mb: 2, justifyContent: 'flex-end' }}
+            sx={{
+              mt: 2,
+              mb: 2,
+              justifyContent: 'flex-end'
+            }}
           >
+            <Typography
+              variant="body1"
+              component="div"
+              sx={{ mr: 'auto', alignSelf: 'center', color: 'text.secondary' }}
+            >
+              {`${employees.length} employees`}
+            </Typography>
             <EmployeesFilter
               searchQuery={searchQuery}
               onQueryChange={handleSearchQueryChange}

@@ -42,7 +42,7 @@ export function EmployeeCard({ employee }: EmployeeCardProps) {
         alt="employee photo"
         onError={handleImgError}
         sx={{
-          height: '200px',
+          height: { sm: '200px', xs: '300px' },
           width: '100%'
         }}
       />
