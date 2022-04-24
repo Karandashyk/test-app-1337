@@ -1,4 +1,4 @@
-enum Office {
+export enum Office {
   Lund = 'Lund',
   Helsingborg = 'Helsingborg',
   Stockholm = 'Stockholm',
@@ -7,7 +7,7 @@ enum Office {
   Öresund = 'Öresund'
 }
 
-enum OrgUnit {
+export enum OrgUnit {
   Employees = '/Employees',
   Admins = '/Admins',
   Incoming = '/Incoming'
@@ -25,8 +25,8 @@ export interface Employee {
   twitter: string | null;
   stackOverflow: string | null;
   linkedIn: string | null;
-  imagePortraitUrl: string;
-  imageWallOfLeetUrl: string;
+  imagePortraitUrl: string | null;
+  imageWallOfLeetUrl: string | null;
   highlighted: boolean;
   published: boolean;
 }

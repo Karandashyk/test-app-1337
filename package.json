@@ -8,7 +8,8 @@
     "@mui/icons-material": "^5.6.2",
     "@mui/material": "^5.6.2",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/react-hooks": "^8.0.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
@@ -31,7 +32,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "tsc:watch": "tsc -w --noEmit"
+    "tsc:watch": "tsc -w --noEmit",
+    "test": "vite-jest"
   },
   "browserslist": {
     "production": [
@@ -46,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "@jest/globals": "^27.5.1",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "eslint": "^8.13.0",
@@ -57,7 +60,9 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "ts-node": "^10.7.0",
+    "vite-jest": "^0.1.4"
   },
   "resolutions": {
     "nth-check": "^2.0.1"

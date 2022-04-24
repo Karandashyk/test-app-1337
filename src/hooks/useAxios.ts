@@ -4,7 +4,15 @@ import { BASE_URL } from '@constants';
 
 axios.defaults.baseURL = BASE_URL;
 
-export const useAxios = <T>(axiosParams: AxiosRequestConfig) => {
+interface UseAxiosReturnParams<T> {
+  data?: T;
+  error?: AxiosError;
+  loading: boolean;
+}
+
+export const useAxios = <T>(
+  axiosParams: AxiosRequestConfig
+): UseAxiosReturnParams<T> => {
   const [data, setData] = useState<T>();
   const [error, setError] = useState<AxiosError>();
   const [loading, setLoading] = useState<boolean>(true);
